@@ -1,0 +1,197 @@
+.page {
+  min-height: 100vh;
+  background-color: var(--color-bg);
+  padding: 2rem 1rem;
+}
+
+.backButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--color-text-secondary);
+  text-decoration: none;
+  font-size: 0.875rem;
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+  transition: color 0.2s;
+}
+
+.backButton:hover {
+  color: var(--color-primary);
+}
+
+.backButton:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+  border-radius: 0.25rem;
+}
+
+.container {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.successMessage {
+  padding: 1rem;
+  background-color: rgba(16, 185, 129, 0.1);
+  border: 1px solid var(--color-accent);
+  border-radius: 0.5rem;
+  color: var(--color-accent);
+  font-size: 0.9375rem;
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  animation: slideDown 0.3s ease-out;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.card {
+  background-color: var(--color-surface);
+  border-radius: 1rem;
+  padding: 2rem;
+  box-shadow: var(--shadow-light);
+  border: 1px solid var(--color-border);
+  animation: fadeIn 0.5s ease-out;
+}
+
+.dark .card {
+  box-shadow: var(--shadow-dark);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.content {
+  margin-top: 2rem;
+  border-top: 1px solid var(--color-border);
+  padding-top: 2rem;
+}
+
+/* Logout Section */
+.logoutSection {
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--color-border);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.logoutButton {
+  min-width: 200px;
+}
+
+.logoutHint {
+  font-size: 0.8125rem;
+  color: var(--color-text-secondary);
+  text-align: center;
+  margin: 0;
+  opacity: 0.8;
+}
+
+/* Loading Skeleton */
+.skeleton {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding: 3rem 2rem;
+}
+
+.skeletonAvatar {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  background: linear-gradient(
+    90deg,
+    var(--color-input-bg) 25%,
+    var(--color-border) 50%,
+    var(--color-input-bg) 75%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+.skeletonText {
+  height: 1.5rem;
+  width: 200px;
+  border-radius: 0.5rem;
+  background: linear-gradient(
+    90deg,
+    var(--color-input-bg) 25%,
+    var(--color-border) 50%,
+    var(--color-input-bg) 75%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+/* Error State */
+.errorState {
+  text-align: center;
+  padding: 3rem 2rem;
+  color: var(--color-text-secondary);
+}
+
+.errorState h2 {
+  font-size: 1.5rem;
+  color: var(--color-text-primary);
+  margin: 0 0 1rem 0;
+}
+
+.errorState p {
+  font-size: 1rem;
+  margin: 0.5rem 0;
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+  .page {
+    padding: 1rem 0.75rem;
+  }
+
+  .card {
+    padding: 1.5rem 1rem;
+  }
+
+  .content {
+    padding-top: 1.5rem;
+  }
+
+  .logoutSection {
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+  }
+
+  .logoutButton {
+    width: 100%;
+  }
+}

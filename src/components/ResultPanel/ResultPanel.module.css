@@ -1,0 +1,265 @@
+.panel {
+  background-color: var(--color-surface);
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  box-shadow: var(--shadow-light);
+  max-width: 700px;
+  margin: 2rem auto 0;
+  animation: slideIn 0.4s ease-out;
+}
+
+.dark .panel {
+  box-shadow: var(--shadow-dark);
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.summary {
+  margin-bottom: 1.5rem;
+  outline: none;
+}
+
+.scoreRow {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+
+.scorePill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: 2rem;
+  font-weight: 600;
+}
+
+.scoreHigh {
+  background-color: rgba(16, 185, 129, 0.15);
+  color: var(--color-accent);
+  border: 2px solid var(--color-accent);
+}
+
+.scoreMedium {
+  background-color: rgba(245, 158, 11, 0.15);
+  color: var(--color-warning);
+  border: 2px solid var(--color-warning);
+}
+
+.scoreLow {
+  background-color: rgba(239, 68, 68, 0.15);
+  color: var(--color-danger);
+  border: 2px solid var(--color-danger);
+}
+
+.scoreLabel {
+  font-size: 0.8125rem;
+  opacity: 0.9;
+}
+
+.scoreValue {
+  font-size: 1.125rem;
+}
+
+.verdictBadge,
+.confidenceBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  font-size: 0.875rem;
+}
+
+.verdictLabel,
+.confidenceLabel {
+  color: var(--color-text-secondary);
+}
+
+.verdictValue,
+.confidenceValue {
+  font-weight: 600;
+  color: var(--color-text-primary);
+}
+
+.rationale {
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: var(--color-text-primary);
+  margin: 0;
+}
+
+.evidenceSection {
+  margin-bottom: 1.5rem;
+}
+
+.evidenceTitle {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-text-primary);
+  margin: 0 0 1rem 0;
+}
+
+.sourcesList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.sourceItem {
+  padding: 1rem;
+  background-color: var(--color-input-bg);
+  border: 1px solid var(--color-border);
+  border-radius: 0.5rem;
+  transition: all 0.2s;
+}
+
+.sourceItem:hover {
+  border-color: var(--color-primary);
+  box-shadow: 0 2px 8px rgba(37, 99, 235, 0.1);
+}
+
+.sourceHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 0.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.sourceTitle {
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--color-primary);
+  text-decoration: none;
+  flex: 1;
+  line-height: 1.4;
+}
+
+.sourceTitle:hover {
+  text-decoration: underline;
+}
+
+.sourceTitle:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+  border-radius: 0.25rem;
+}
+
+.stanceBadge {
+  padding: 0.25rem 0.625rem;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  border-radius: 0.25rem;
+  white-space: nowrap;
+  text-transform: uppercase;
+  letter-spacing: 0.025em;
+}
+
+.stanceSupports {
+  background-color: rgba(16, 185, 129, 0.15);
+  color: var(--color-accent);
+}
+
+.stanceContradicts {
+  background-color: rgba(239, 68, 68, 0.15);
+  color: var(--color-danger);
+}
+
+.stanceNeutral {
+  background-color: rgba(148, 163, 184, 0.15);
+  color: var(--color-text-secondary);
+}
+
+.sourceMeta {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.8125rem;
+  color: var(--color-text-secondary);
+  margin-bottom: 0.5rem;
+}
+
+.publisher {
+  font-weight: 500;
+}
+
+.separator {
+  opacity: 0.5;
+}
+
+.date {
+  opacity: 0.8;
+}
+
+.excerpt {
+  font-size: 0.875rem;
+  line-height: 1.5;
+  color: var(--color-text-secondary);
+  margin: 0;
+}
+
+.noSources {
+  padding: 1.5rem;
+  text-align: center;
+  color: var(--color-text-secondary);
+  font-size: 0.9375rem;
+  background-color: var(--color-input-bg);
+  border-radius: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.actions {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.actions button {
+  flex: 1;
+  min-width: 140px;
+}
+
+@media (max-width: 640px) {
+  .panel {
+    padding: 1rem;
+    margin-top: 1.5rem;
+  }
+
+  .scoreRow {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+
+  .scorePill {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .sourceHeader {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .actions {
+    flex-direction: column;
+  }
+
+  .actions button {
+    width: 100%;
+  }
+}
