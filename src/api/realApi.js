@@ -257,5 +257,4 @@ export function debugLocalStorage() {
   console.log('Token:', localStorage.getItem('truthlens_token') ? 'EXISTS' : 'MISSING');
   console.log('User:', localStorage.getItem('truthlens_user') ? 'EXISTS' : 'MISSING');
   console.log('Profile:', localStorage.getItem('truthlens_profile') ? 'EXISTS' : 'MISSING');
-  console.log('===================================');
-}
+  
